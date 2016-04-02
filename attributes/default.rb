@@ -59,9 +59,9 @@ default['zabbix']['agent']['conf']['EnableRemoteCommands'] = '1'
 default['zabbix']['agent']['conf']['HostMetadata'] = nil
 default['zabbix']['agent']['conf']['Hostname']     = node['fqdn']
 # default['zabbix']['agent']['conf']['HostnameItem'] = nil # set by system.hostname
-unless node['platform'] == 'windows'
-  default['zabbix']['agent']['conf']['HostnameItem'] = 'system.run[hostname -f]'
-end
+#unless node['platform'] == 'windows'
+#  default['zabbix']['agent']['conf']['HostnameItem'] = 'system.run[hostname -f]'
+#end
 # default['zabbix']['agent']['conf']['Include']  = nil #default
 default['zabbix']['agent']['conf']['Include']      = default['zabbix']['agent']['include_dir']
 default['zabbix']['agent']['conf']['ListenIP']     = '0.0.0.0'
