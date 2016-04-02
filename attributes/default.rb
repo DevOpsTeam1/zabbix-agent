@@ -57,7 +57,7 @@ default['zabbix']['agent']['conf']['DebugLevel']  = '3'
 # default['zabbix']['agent']['conf']['EnableRemoteCommands'] = '0'
 default['zabbix']['agent']['conf']['EnableRemoteCommands'] = '1'
 default['zabbix']['agent']['conf']['HostMetadata'] = nil
-default['zabbix']['agent']['conf']['Hostname']     = 'epplkraw0175t1.budapest.epam.com' # defaults to HostnameItem
+default['zabbix']['agent']['conf']['Hostname']     = node['fqdn']
 # default['zabbix']['agent']['conf']['HostnameItem'] = nil # set by system.hostname
 unless node['platform'] == 'windows'
   default['zabbix']['agent']['conf']['HostnameItem'] = 'system.run[hostname -f]'
@@ -83,8 +83,8 @@ unless node['platform'] == 'windows'
 end
 default['zabbix']['agent']['conf']['RefreshActiveChecks']  = '120'
 # default['zabbix']['agent']['conf']['Server']  = nil #default
-default['zabbix']['agent']['conf']['Server']       = '10.6.193.62'
-default['zabbix']['agent']['conf']['ServerActive'] = '10.6.193.62'
+default['zabbix']['agent']['conf']['Server']       = default['zabbix']['agent']['conf']['ServerActive'] = node['epc-provisioning']['instances'].find { |i| i[1]['role'] == 'zabbix-srv' }[1]['private_ip_address']
+#default['zabbix']['agent']['conf']['ServerActive'] = '10.6.193.62'
 default['zabbix']['agent']['conf']['SourceIP']     = nil
 default['zabbix']['agent']['conf']['StartAgents']  = '3'
 default['zabbix']['agent']['conf']['Timeout']      = '3'
