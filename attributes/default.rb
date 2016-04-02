@@ -25,7 +25,7 @@ else
   default['zabbix']['agent']['scripts'] = '/etc/zabbix/scripts'
 end
 
-default['zabbix']['agent']['version']           = '2.4.6'
+default['zabbix']['agent']['version']           = '3.0'
 default['zabbix']['agent']['servers']           = ['zabbix']
 default['zabbix']['agent']['servers_active']    = ['zabbix']
 
@@ -69,7 +69,7 @@ default['zabbix']['agent']['conf']['ListenPort']   = '10050'
 unless node['platform'] == 'windows'
   default['zabbix']['agent']['conf']['LoadModule']   = nil
 end
-default['zabbix']['agent']['conf']['LogType']      = system
+default['zabbix']['agent']['conf']['LogType']      = 'system'
 default['zabbix']['agent']['conf']['LogFile']      = nil
 default['zabbix']['agent']['conf']['LogFileSize']  = '1'
 default['zabbix']['agent']['conf']['LogRemoteCommands']  = '0'
@@ -83,7 +83,7 @@ unless node['platform'] == 'windows'
 end
 default['zabbix']['agent']['conf']['RefreshActiveChecks']  = '120'
 # default['zabbix']['agent']['conf']['Server']  = nil #default
-default['zabbix']['agent']['conf']['Server']       = 'zabbix'
+default['zabbix']['agent']['conf']['Server']       = '10.6.193.62'
 default['zabbix']['agent']['conf']['ServerActive'] = nil
 default['zabbix']['agent']['conf']['SourceIP']     = nil
 default['zabbix']['agent']['conf']['StartAgents']  = '3'
