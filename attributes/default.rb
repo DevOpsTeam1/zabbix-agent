@@ -83,7 +83,7 @@ unless node['platform'] == 'windows'
 end
 default['zabbix']['agent']['conf']['RefreshActiveChecks']  = '120'
 # default['zabbix']['agent']['conf']['Server']  = nil #default
-default['zabbix']['agent']['conf']['Server']       = '10.6.193.62'
+default['zabbix']['agent']['conf']['Server']       = 'http://ecsc00104513.epam.com/'
 default['zabbix']['agent']['conf']['ServerActive'] = nil
 default['zabbix']['agent']['conf']['SourceIP']     = nil
 default['zabbix']['agent']['conf']['StartAgents']  = '3'
