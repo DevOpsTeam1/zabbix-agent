@@ -111,7 +111,7 @@ when 'ubuntu', 'debian'
   default['zabbix']['agent']['package']['repo_uri'] = "http://repo.zabbix.com/zabbix/2.4/#{node['platform']}/"
   default['zabbix']['agent']['package']['repo_key'] = 'http://repo.zabbix.com/zabbix-official-repo.key'
 when 'redhat', 'centos', 'scientific', 'oracle'
-  default['zabbix']['agent']['package']['repo_uri'] = 'http://repo.zabbix.com/zabbix/2.4/rhel/$releasever/$basearch/'
+  default['zabbix']['agent']['package']['repo_uri'] = 'http://repo.zabbix.com/zabbix/3.0/rhel/$releasever/$basearch/'
   default['zabbix']['agent']['package']['repo_key'] = 'http://repo.zabbix.com/RPM-GPG-KEY-ZABBIX'
 when 'amazon'
   # current Amazon AMI based on RHEL6 at the moment
