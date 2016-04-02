@@ -69,6 +69,7 @@ default['zabbix']['agent']['conf']['ListenPort']   = '10050'
 unless node['platform'] == 'windows'
   default['zabbix']['agent']['conf']['LoadModule']   = nil
 end
+default['zabbix']['agent']['conf']['LogType']      = system
 default['zabbix']['agent']['conf']['LogFile']      = nil
 default['zabbix']['agent']['conf']['LogFileSize']  = '1'
 default['zabbix']['agent']['conf']['LogRemoteCommands']  = '0'
